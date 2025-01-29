@@ -6,28 +6,52 @@
     <meta name="description" content="Luis Miguel Matias - Portfolio showcasing my projects, skills, and journey in technology and design.">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="PortfolioStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.intro-text').hide().fadeIn(1500);
+            $('.MatiasPic').hide().delay(500).fadeIn(1500);
+        });
+    </script>
 </head>
 <body>
     <header class="header-container">
         <nav>
             <ul>
-                <li><a class="active" href="MatiasPortfolio.html">Home</a></li>
-                <li><a href="About Me.html">About Me</a></li>
-                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="MatiasPortfolio.html">Home</a></li>
+                <li><a href=>Projects</a></li>
+                <li><a href=>About Me</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Hi, I'm Luis Miguel Matias</h1>
-            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br>
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in <br>
-                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non<br> proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
-            <img class="MatiasPic" src="peyktyur.jpeg" alt="Luis Matias Picture" loading="lazy">
-            <button class="button-80" role="button" onclick="location.href='Projects.html'">My Projects</button>
+        <section class="intro">
+            <div class="intro-text">
+                <h1>Hi, I'm Luis Miguel Matias</h1>
+                <p>I am an IT student specializing in <strong>Data Science and Business Analytics</strong>, with a passion for solving real-world problems through technology. This portfolio showcases my expertise in <strong>C#, HTML, CSS, JavaScript, and Power BI</strong>, featuring projects that blend data-driven insights with software development.</p>
+                <p class="cta-text">Explore my work and see how I can bring value to your team.</p>
+            </div>
+            <div class="intro-image">
+                <img class="MatiasPic" src="MatiasPic.png" alt="Luis Matias Picture" loading="lazy">
+            </div>
         </section>
     </main>
+    
+    <footer>
+        <p>Luis Miguel Matias - IT Student | Data Science & Business Analytics</p>
+        <div class="social-links">
+            <a href="mailto:miguelmatias3003@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/migzz13" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/luis-miguel-matias05/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

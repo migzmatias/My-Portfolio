@@ -1,22 +1,25 @@
 body {
   background-color: #1f2020;
   color: white;
-  font-family: Arial, sans-serif;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #2d2d2d;
-  color: white;
-  width: 100%;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  right: 0;
+  width: 100%;
+  background-color: #2d2d2d;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 nav ul {
@@ -36,71 +39,92 @@ nav a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover, nav a.active {
-  background-color: yellow;
+nav a:hover {
+  background-color: #ffff00;
   color: black;
 }
 
 main {
   margin-top: 100px;
   padding: 20px;
-  text-align: center;
+  flex: 1;
 }
 
-h1 {
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.intro-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.intro-text h1 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-weight: bold;
+  border-right: 2px solid white;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  animation: typing 3s steps(40, end) forwards, blink 0.8s infinite;
 }
 
-h4 {
-  font-size: 1.25rem;
-  margin-bottom: 40px;
-  line-height: 1.6;
+.intro-text h4, .cta-text, .intro-text p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f4f4f4;
+  overflow: hidden;
+  white-space: normal;
+}
+
+.intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .MatiasPic {
-  max-width: 20%;
+  max-width: 50%;
   height: auto;
-  margin: 0 auto 20px;
-  display: block;
+  border-radius: 50%;
 }
 
-.button-80 {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #2d2d2d;
+  margin-top: auto;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer .social-links a {
+  margin: 0 10px;
   color: white;
-  border: none;
-  border-radius: 0.375rem;
-  padding: 0.875rem 1.125rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.3s ease;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
 
-.button-80:hover {
-  background: linear-gradient(to right, #2575fc, #6a11cb);
-  transform: scale(1.05);
+footer .social-links a:hover {
+  color: #ffff00;
 }
 
-.button-80:active {
-  transform: scale(1);
-}
 
-@media (max-width: 768px) {
-  body {
-      font-size: 90%;
-  }
-
-  .header-container {
-      flex-direction: column;
-  }
-
-  h1, h4 {
-      text-align: center;
-  }
-
-  .button-80 {
-      margin: 20px auto;
-      display: block;
-  }
-}
