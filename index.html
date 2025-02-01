@@ -11,25 +11,37 @@
     <script>
         $(document).ready(function() {
             $('.intro-text').hide().fadeIn(1500);
-            $('.MatiasPic').hide().delay(500).fadeIn(1500);
         });
     </script>
+    <script>
+        $(document).ready(function() {
+          $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+              $('.intro-text').fadeIn(1000);
+            }
+          });
+        });
+      </script>
 </head>
 <body>
-    <header class="header-container">
-        <nav>
-            <ul>
-                <li><a href="MatiasPortfolio.html">Home</a></li>
-                <li><a href=>Projects</a></li>
-                <li><a href=>About Me</a></li>
+
+    <header>
+        <nav class="header-container">
+            <div class="typewriting-container">
+                <span class="typewriter-text"></span>
+            </div>
+            <ul class="nav-links">
+                <a href="#home"><i class="fa fa-home"></i> Home</a>
+                <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li> 
+        <li><a href="#about-me"><i class="fas fa-user"></i> About Me</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="intro">
+        <section class="intro" id="home">
             <div class="intro-text">
-                <h1>Hi, I'm Luis Miguel Matias</h1>
+                <h1>Welcome to My Portfolio</h1>
                 <p>I am an IT student specializing in <strong>Data Science and Business Analytics</strong>, with a passion for solving real-world problems through technology. This portfolio showcases my expertise in <strong>C#, HTML, CSS, JavaScript, and Power BI</strong>, featuring projects that blend data-driven insights with software development.</p>
                 <p class="cta-text">Explore my work and see how I can bring value to your team.</p>
             </div>
@@ -37,6 +49,138 @@
                 <img class="MatiasPic" src="MatiasPic.png" alt="Luis Matias Picture" loading="lazy">
             </div>
         </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="carousel-container">
+                <button id="prevBtn" class="carousel-btn">&#10094;</button>
+                <div class="carousel">
+                    <div class="project" data-index="0">
+                        <img src="TaskManagement.png" alt="Project 1">
+                        <div class="project-info">
+                            <h3>Simple Task Management Application</h3>
+                            <p>This Task Management Application built using C# is a console-based system that allows users to create, 
+                                assign, track, and verify tasks while storing data in an external CSV file. It records 
+                                task details such as description, timestamps, assigned person, and status updates, 
+                                ensuring efficient task monitoring. The application supports different task statuses 
+                                (Open, Assigned, For Verification, For Revision, Closed) and includes a verification 
+                                 to validate completed tasks. The system ensures data integrity and provides a user-
+                                  way to manage and track tasks effectively.</p>
+                            <a href="https://github.com/migzz13/Task-Management-Application" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project" data-index="1">
+                        <img src="8Bitgame.png" alt="Project 2">
+                        <div class="project-info">
+                            <h3>8-Bit Binary Conversion Game</h3>
+                            <p>This game was developed using WPF and C#. The goal is to convert as much binary numbers you can into decimal numbers under time pressure.
+                                The game features a scoring system that tracks the player's progress, a leaderboard that records high scores, and an input system for 
+                                entering player names. A leaderboard window sorts and displays top scores based on performance, time played, and difficulty selected
+                                 making for a simple yet engaging gameplay experience.</p>
+                            <a href="https://github.com/yourgithub/project2" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project" data-index="2">
+                        <img src="LeadsTracker.png" alt="Project 3">
+                        <div class="project-info">
+                            <h3>Leads Tracker Application</h3>
+                            <p>This leads tracker application, developed using WPF and C#, is designed to help schools efficiently manage and track potential 
+                                enrollees—individuals inquiring about the school who may or may not choose to enroll. It allows sales teams to capture, track, 
+                                and follow up with leads, organize important documents, and ensure accurate data reporting, ultimately improving the enrollment process.
+                                Organizing documents includes a way to use a camera device to capture an image of the document or a file upload function
+                            </p>
+                            <a href="https://github.com/yourgithub/project3" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project" data-index="3">
+                        <img src="PresentationSite.png" alt="Project 4" style="height: 312px;">
+                        <div class="project-info">
+                            <h3>Proposal Website</h3>
+                            <p>This proposal website was developed with HTML, CSS, Javascript, and PHP. It is a website that showcases skills related to web development
+                                as it involves different features like jQuery animations such as parallax effects and flipcards as well as integration with a database 
+                                using PHP. A section of the website is dedicated to customization for the user where they are able to select a color palette from a color picker
+                                as well as a color theory that the website will take to change the overall theme of the entire website to fit the users taste. Overall, the website was
+                                used to propose an Artificial Intelligence that aids teachers in tracking attendance of students using Computer Vision.
+                            </p>
+                            <a href="https://github.com/yourgithub/project4" target="_blank">View on GitHub</a>
+                        </div>
+                    </div>
+                    <div class="project" data-index="4">
+                        <img src="PowerBiDashboard.png" alt="Power BI Dashboard" style="height: 312px;">
+                        <div class="project-info">
+                            <h3>Sleep Health and Lifetyle Dataset Analysis</h3>
+                            <p>This dashboard was created using Microsoft's PowerBI. It is an analysis on a dataset named "Sleep Health and Lifestyle" taken from the
+                                website "Kaggle". It contains information on various health and lifestyle factors such as sleep duration, stress levels, physical activity, 
+                                blood pressure, and more. This dataset was used to explore the correlations and trends in health metrics, aiming to identify actionable
+                                insights. This analysis and visualization on the dataset “Sleep Health and Lifestyle” provides comprehensive insights into the relationships between the 
+                                aforementioned health and lifestyle factors separated by demographic groups such as gender and age.
+                            </p>
+                            <a href="https://drive.google.com/drive/folders/1WrNKaccqnojq9ctAdxlnbpiaz_TrMbmA?usp=sharing" target="_blank">Download Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+                <button id="nextBtn" class="carousel-btn">&#10095;</button>
+            </div>
+        </section>
+        
+        <script>
+            $(document).ready(function() {
+                let currentIndex = 0;
+                const totalProjects = $(".project").length;
+        
+                function showProject(index) {
+                    $(".project").hide();
+                    $(".project").eq(index).fadeIn();
+                }
+        
+                $("#prevBtn").click(function() {
+                    currentIndex = (currentIndex - 1 + totalProjects) % totalProjects;
+                    showProject(currentIndex);
+                });
+        
+                $("#nextBtn").click(function() {
+                    currentIndex = (currentIndex + 1) % totalProjects;
+                    showProject(currentIndex);
+                });
+        
+                showProject(currentIndex);
+            });
+        </script>
+
+        <section id="about-me" class="about-me-section">
+            <div class="about-me-container">
+            <h2>About Me</h2>
+            <p class="about-me-introduction">
+                Hi, I'm Luis Miguel Matias, a passionate IT student specializing in Data Science and Business Analytics. 
+                I thrive in creating innovative solutions and constantly improving myself.
+            </p>
+            <h3>Skills</h3>
+            <p>
+                I have honed my skills in various programming languages including C#, JavaScript, and HTML/CSS.
+                My expertise lies in building data-driven applications and analyzing large datasets to derive actionable insights.
+            </p>
+            <h3>Achievements</h3>
+            <p>
+                Throughout my academic journey, I have been an achiever since I was young, consistently excelling in my studies. In college,
+                 I have maintained my status as a Dean’s Lister every semester, demonstrating my dedication to learning and academic excellence.
+<br><br>
+                Beyond academics, I take pride in my ability to develop various systems, ranging from web applications to desktop software, incorporating 
+                different programming languages and frameworks. Additionally, I have a deep interest in data visualization and analysis, transforming 
+                complex datasets into meaningful insights through the use of tools like Power BI.
+            </p>
+            <h3>Values</h3>
+            <p>
+                I value continuous learning, innovation, and collaboration, always striving to enhance my skills and contribute effectively to any project and problems
+                 I take on.
+            </p>
+            <h3>How I Can Help</h3>
+            <p>
+                My skills in data science and business analytics can help you unlock valuable insights from data, build user-friendly
+                 applications, and make informed decisions that drive success.
+            </p>
+            </div>
+        </section>
+  
     </main>
     
     <footer>
@@ -51,7 +195,10 @@
             <a href="https://www.linkedin.com/in/luis-miguel-matias05/" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
+            </p>
         </div>
+
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
